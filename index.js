@@ -70,6 +70,11 @@ exports.nugu_hiskin = (req, res) => {
     return jsonReturn;
   }
 
+  //액션 선언 모음, 여기서 액션을 선언해 줍니다.
+  const ACTION_SKINCONCERN = 'action.skinConcern'; // 피부고민
+  const ACTION_COSMETICRECOMMENDATION = 'action.cosmeticRecommendation'; // 화장품 추천
+  const ACTION_DAILYCOMMUNICATION = 'action.dailyCommunication'; // 일상대화
+
   // Intent가 오는 부분, actionName으로 구분합니다.
   switch (actionName) {
     case ACTION_SKINCONCERN:
@@ -79,14 +84,14 @@ exports.nugu_hiskin = (req, res) => {
       };
       return res.send(makeJson(successResponse1));
       break;
-    case ACTION_COSMETICRECOM:
+    case ACTION_COSMETICRECOMMENDATION:
       // "성공2"를 전달하고자 하는 경우
       const successResponse2 = {
         "cosmeticRecom": parameters.cosmeticRecom.value
       };
       return res.send(makeJson(successResponse2));
       break;
-    case ACTION_DAILYCONVERSATION:
+    case ACTION_DAILYCOMMUNICATION:
       // "성공3"을 전달하고자 하는 경우
       const successResponse3 = {
         "dailyComm": parameters.dailyComm.value
