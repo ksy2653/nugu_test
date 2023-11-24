@@ -78,25 +78,18 @@ exports.nugu_hiskin = (req, res) => {
   // Intent가 오는 부분, actionName으로 구분합니다.
   switch (actionName) {
     case ACTION_SKINCONCERN:
-      // "성공1"을 전달하고자 하는 경우
-      const successResponse1 = {
-        "concern": parameters.concern.value
-      };
-      return res.send(makeJson(successResponse1));
+      let concern = "success1"
+      return res.send(makeJson(concern));
       break;
     case ACTION_COSMETICRECOMMENDATION:
       // "성공2"를 전달하고자 하는 경우
-      const successResponse2 = {
-        "cosmeticRecom": parameters.cosmeticRecom.value
-      };
-      return res.send(makeJson(successResponse2));
+      let cosmeticRecom = "success2"
+      return res.send(makeJson(cosmeticRecom));
       break;
     case ACTION_DAILYCOMMUNICATION:
       // "성공3"을 전달하고자 하는 경우
-      const successResponse3 = {
-        "dailyComm": parameters.dailyComm.value
-      };
-      return res.send(makeJson(successResponse3));
+      let dailyComm = "success3"
+      return res.send(makeJson(dailyComm));
       break;
     // 추가적인 case들을 필요에 따라 계속해서 작성할 수 있습니다.
   }
